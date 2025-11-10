@@ -1,1 +1,1 @@
-{"name":"Local: test","url":"d:\\c++代码\\test.c","tests":[{"id":1761650010084,"input":"4 4\n13 23 34 45\n13 3 3 3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\c++代码\\test.c","group":"local","local":true}
+{"name":"Local: test","url":"d:\\c++代码\\test.c","tests":[{"id":1761650010084,"input":"5 a b c","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\c++代码\\test.c","group":"local","local":true}
