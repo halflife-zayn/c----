@@ -1,1 +1,1 @@
-{"name":"Local: week9","url":"d:\\c++代码\\week9.c","tests":[{"id":1762912666836,"input":"","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\c++代码\\week9.c","group":"local","local":true}
+{"name":"Local: week9","url":"d:\\c++代码\\week9.c","tests":[{"id":1762912666836,"input":"4\n100 80\n90 50\n120 60\n140 90","output":""},{"id":1762935267676,"input":"1\n1 99 9801 1000","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\c++代码\\week9.c","group":"local","local":true}

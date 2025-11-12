@@ -99,3 +99,73 @@ double getDistance(point P, line L){
     double sin=sqrt(1-cos*cos);
     return pa*sin;
 }*/
+/*
+#include <bits/stdc++.h>
+using namespace std;
+
+struct point{
+    double x,y;
+    point(double A,double B){
+        x=A,y=B;
+    }
+    point() = default;
+};
+
+struct triangle{
+    point a,b,c;
+    triangle(point A,point B,point C){
+        a=A,b=B,c=C;
+    }
+    triangle() = default;
+};
+
+double getArea(triangle T){
+    double ab=sqrt((T.a.x-T.b.x)*(T.a.x-T.b.x)+(T.a.y-T.b.y)*(T.a.y-T.b.y));
+    double bc=sqrt((T.b.x-T.c.x)*(T.b.x-T.c.x)+(T.b.y-T.c.y)*(T.b.y-T.c.y));
+    double ca=sqrt((T.c.x-T.a.x)*(T.c.x-T.a.x)+(T.c.y-T.a.y)*(T.c.y-T.a.y));
+    double s=(ab+bc+ca)/2;
+    return sqrt(s*(s-ab)*(s-bc)*(s-ca));
+    // TODO: 计算三角形T的面积
+}*/
+/*#include <bits/stdc++.h>
+using namespace std;
+
+struct point{
+    double x,y;
+    point(double A,double B){
+        x=A,y=B;
+    }
+    point() = default;
+};
+
+struct line{
+    point point_A,point_B;
+    line(point A,point B){
+        point_A = A,point_B = B;
+    }
+    line() = default;
+};
+
+struct Circle{
+    point O;
+    int r;
+    Circle(point A,int B){
+        O=A,r=B;
+    }
+    Circle() = default;
+};
+
+double getDistance(const Circle& circle, const line& l) {
+    double ox=circle.O.x;double oy=circle.O.y;
+    double r=circle.r;
+    double ax=l.point_A.x;double ay=l.point_A.y;
+    double bx=l.point_B.x;double by=l.point_B.y;
+    double A=by-ay;
+    double B=ax-bx;
+    double C=bx*ay-ax*by;
+    double d=abs(A*ox+B*oy+C)/sqrt(A*A+B*B);
+    return 2*sqrt(r*r-d*d);
+    
+    
+    // 请在这里实现你的代码
+}*/

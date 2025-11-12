@@ -37,7 +37,7 @@ int main(){
     }
 
 }*/
-int main() {
+/*int main() {
     string b;
     int c;
     cin>>b>>c;
@@ -51,4 +51,47 @@ int main() {
     }
     
     return 0;
+}
+*/
+/*int main(){
+string n,m;
+cin>>n;
+m=n;
+reverse(n.begin(),n.end());
+if(m==n)cout<<"YES";
+else cout<<"NO";
+}*/
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    string str;
+    bool first=true;
+    while(cin>>str){
+        if(str[0]>='0'&&str[0]<='9'){
+            int len=str.size();
+            string woaiyinhui=str;
+            for(int i=0;i<len;i++){
+            woaiyinhui[i]=str[len-i-1];
+           }
+           //reverse(str.begin(),str.end());
+           if(first){cout<<woaiyinhui;first=false;}
+           else cout<<" "<<woaiyinhui;
+        }
+        else if(str[0]>='a'&&str[0]<='z'){
+           int len=str.size();
+           for(int i=0;i<len;i++){
+            str[i]=str[i]-'a'+'A';
+           }
+           if(first){cout<<str;first=false;}
+           else cout<<" "<<str;
+        }
+        else if(str[0]>='A'&&str[0]<='Z'){
+           int len=str.size();
+           for(int i=0;i<len;i++){
+            str[i]=str[i]-'A'+'a';
+           }
+           if(first){cout<<str;first=false;}
+           else cout<<" "<<str;
+        }
+    }
 }

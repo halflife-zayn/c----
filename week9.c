@@ -91,7 +91,7 @@ int main(){
 }
 */
 
-#include<stdio.h>
+/*#include<stdio.h>
 #include<math.h>
 int sushu(int a){
     int b=sqrt(a);
@@ -112,4 +112,131 @@ int main(){
         printf("%d ",i);
     }
 
+}
+*/
+#include<stdio.h>
+#include<math.h>
+/*int main(){
+    char c;
+    int inword=0;
+    int first=1;
+    char a[100]={0};
+    int sliver=1;
+    while(scanf("%c",&c)!=EOF&&c!='\n'){
+        if(c>='0'&&c<='9'){
+           a[sliver]=c;
+           sliver++;
+        }
+        else if(c>='a'&&c<='z'){
+            c=c-'a'+'A';
+           if(first||inword){printf("%c",c);first=0;inword=1;}
+           else {printf(" %c",c); inword=1;}
+           }
+        else if(c>='A'&&c<='Z'){
+            c=c-'A'+'a';
+           if(first||inword){printf("%c",c);first=0;inword=1;}
+           else {printf(" %c",c); inword=1;}
+           }
+        else if(c==' ') {
+            inword=0;
+            if(sliver!=1){
+            if(first) first=0;
+            else printf(" ");
+                for(int i=sliver-1;i>=1;i--){
+                    printf("%c",a[i]);
+                    a[i]=0;
+                }
+                sliver=1;
+            }
+        }
+    }
+    if (sliver!=1){
+        printf(" ");
+        for(int i=sliver-1;i>=1;i--){
+                    printf("%c",a[i]);
+                    a[i]=0;
+                }
+    }
+}*/
+/*#include<stdio.h>
+#include<math.h>
+int fp(int base,int exp,int mod){//kuaisumi
+    long long res=1;
+    long long base1=base;
+    while(exp>0){
+        if(exp%2==1){
+            res=(res*base1)%mod;
+        }
+        base1=(base1*base1)%mod;
+        exp=exp/2;
+    }
+    return res;
+}
+int main(){
+    int n,sum;
+    sum=0;
+    int dp[200]={0};
+    scanf("%d",&n);
+    for(int i=1;i<=n;i++){
+        int a,b,c,k;
+        scanf("%d %d %d %d",&a,&b,&c,&k);
+        if(a-b==b-c){
+            long long term=a+(long long)(k-1)*(b-a);
+            sum=term%200907;
+        }
+        else if(a!=0&&b!=0&&a*c==b*b){
+            int r=b/a;
+            sum=((long long)a*fp(r,k-1,200907))%200907;
+        }
+        printf("%d\n",sum);
+    }
+    return 0;
+}*/
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char ha_months[19][10] = {
+        "pop","no","zip","zotz","tzec","xul","yoxkin",
+        "mol","chen","yax","zac","ceh","mac",
+        "kankin","muan","pax","koyab","cumhu","uayet"
+    };
+    
+    char tz_days[20][10] = {
+        "imix","ik","akbal","kan","chicchan","cimi","manik", 
+        "lamat","muluk","ok","chuen","eb","ben", 
+        "ix","mem","cib","caban","eznab","canac","ahau"
+    };
+    
+    int n;
+    scanf("%d",&n);
+    printf("%d\n",n);
+    
+    for (int i=1;i<=n;i++) {
+        int d,y;
+        char m[10];
+        
+        scanf("%d. %s %d",&d,m,&y);
+        
+        int total_days =y*365;
+        
+        for (int j=1;j<20; j++) {
+            if (strcmp(m,ha_months[j])==0) {
+                total_days+=j*20;
+                break;
+            }
+        }
+        
+        total_days+=d;
+        
+        int tz_year=total_days/260;
+        int remainder=total_days%260;
+        
+        int tz_number=(remainder%13)+1;
+        int tz_name_index=remainder%20;
+        
+        printf("%d %s %d\n", tz_number, tz_days[tz_name_index], tz_year);
+    }
+    
+    return 0;
 }
