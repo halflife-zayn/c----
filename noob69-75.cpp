@@ -169,3 +169,70 @@ double getDistance(const Circle& circle, const line& l) {
     
     // 请在这里实现你的代码
 }*/
+#include <bits/stdc++.h>
+using namespace std;
+
+struct point {
+    double x, y;
+    point(double A, double B) {
+        x = A, y = B;
+    }
+    point() = default;
+};
+
+struct line {
+    point point_A, point_B;
+    line(point A, point B) {
+        point_A = A, point_B = B;
+    }
+    line() = default;
+};
+
+point findMeetingPoint(line line_A, line line_B) {
+    double ax=line_A.point_A.x;double ay=line_A.point_A.y;
+    double bx=line_A.point_B.x;double by=line_A.point_B.y;
+    double cx=line_B.point_A.x;double cy=line_B.point_A.y;
+    double dx=line_B.point_B.x;double dy=line_B.point_B.y;
+    point jiao;
+    if(ax==bx&&cx==dx){
+        point jiao=point(-1,-1);
+        return jiao;
+    }
+    else if(ax!=bx&&cx!=dx){
+    double k1=(ay-by)/(ax-bx);double k2=(cy-dy)/(cx-dx);
+    if(k1==k2){
+        jiao=point(-1,-1);
+        return jiao;
+    }
+    else{
+        jiao.x=(k1*ax-k2*cx-ay+cy)/(k1-k2);
+        jiao.y=k1*(jiao.x-ax)+ay;
+        return jiao;
+    }
+    }
+    else if(ax==bx){
+        jiao.x=ax;
+        double k2=(cy-dy)/(cx-dx);
+        jiao.y=k2*(jiao.x-cx)+cy;
+        return jiao;
+    }
+    else if(cx==dx){
+        jiao.x=cx;
+        double k1=(ay-by)/(ax-bx);
+        jiao.y=k1*(jiao.x-ax)+ay;
+        return jiao;
+    }
+    jiao=point(-1,-1);
+        return jiao;
+    // TODO: 在这里输入你的代码，求直线 line_A 与 line_B 的交点
+}
+
+int main() {
+    point A, B, C, D;
+    cin >> A.x >> A.y >> B.x >> B.y >> C.x >> C.y >> D.x >> D.y;
+    line AB = line(A, B);
+    line CD = line(C, D);
+    point ans = findMeetingPoint(AB, CD);
+    cout << fixed << setprecision(12) << ans.x << " " << ans.y;
+    return 0;
+}
