@@ -6,7 +6,10 @@
         "stdio.h": "c",
         "deque": "cpp",
         "string": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "format": "cpp",
+        "sstream": "cpp",
+        "regex": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }
