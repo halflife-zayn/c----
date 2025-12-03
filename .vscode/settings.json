@@ -3,7 +3,10 @@
         "random": "cpp",
         "iostream": "cpp",
         "cmath": "cpp",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "deque": "cpp",
+        "string": "cpp",
+        "vector": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }

@@ -1,0 +1,1 @@
+{"name":"Local: week11","url":"d:\\c++代码\\week11.c","tests":[{"id":1764122175160,"input":"5\n10 20 30 40 50\n6\nU 0 88\nI 2 99\nQ 2\nS 0 5\nD 10\nC 20","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\c++代码\\week11.c","group":"local","local":true}
