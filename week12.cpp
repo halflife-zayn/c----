@@ -100,7 +100,7 @@ cout<<"\n";
     return 0;
 }*/
     
-/*int main(){
+int main(){
     int n;
     cin>>n;
     cin.ignore();
@@ -115,9 +115,11 @@ cout<<"\n";
                 min=str[j];
             }
     }
+    cout<<min<<endl;
+    
     }
-    cout<<min;
-}*/
+    
+}
 
 /*int main(){
     string stra;
@@ -129,7 +131,7 @@ cout<<"\n";
             result+=stra[i];
             result+=strb[i];
         }
-        for(int i=strb.size()+1;i<stra.size();i++){
+        for(int i=strb.size();i<stra.size();i++){
             result+=stra[i];
         }
     }
@@ -173,7 +175,7 @@ cout<<"\n";
     cout<<max<<min;
 }*/
 
-#include<bits/stdc++.h>
+/*#include<bits/stdc++.h>
 using namespace std;
 int main(){
     int n;
@@ -198,8 +200,7 @@ int main(){
     }
     cout<<endl;
     return 0;
-}
-
+}*/
 /*int main(){
     string stra;
     string strb;
@@ -222,3 +223,4 @@ int main(){
     cout<<"No"<<endl;
     return 0;
 }*/
+

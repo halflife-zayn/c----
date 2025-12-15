@@ -37,7 +37,7 @@ int main(){
     }
 
 }*/
-/*int main() {
+int main() {
     string b;
     int c;
     cin>>b>>c;
@@ -52,7 +52,7 @@ int main(){
     
     return 0;
 }
-*/
+
 /*int main(){
 string n,m;
 cin>>n;
@@ -90,7 +90,8 @@ using namespace std;
         }
     }
 }*/
-bool isLeapYear(int year) {
+
+/*bool isLeapYear(int year) {
     return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
 }
 
@@ -151,4 +152,4 @@ int main() {
     int days = daysBetweenDates(date1, date2);
     cout<< days;  
     return 0;
-}
+}*/
