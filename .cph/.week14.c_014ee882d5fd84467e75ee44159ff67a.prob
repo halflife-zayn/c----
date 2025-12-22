@@ -1,0 +1,1 @@
+{"name":"Local: week14","url":"d:\\c++代码\\week14.c","tests":[{"id":1765873259840,"input":"THE BREAD IS SOLD AT $10 PER POUND\n500 DONGCHUAN ROAD EAST CHINA NORMAL UNIVERSITY SHANGHAI CHINA 200241\n#9724 $500 1234\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\c++代码\\week14.c","group":"local","local":true}
