@@ -153,29 +153,37 @@ int main() {
     
     return 0;
 }*/
+
+/*#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int t;
+    cin>>t;
+    int sum=0;
+    while(t--){
+int a,b;
+    cin>>a>>b;
+    if(b<=a)cout<<"error";
+    else{
+    int c=5*(2*b-a)*log(b-a)/a;
+    cout<<"预期意愿值为"<<c;
+    sum+=c;
+    }
+}
+cout<<"总意愿值为"<<sum;
+}*/
+
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    vector<int> all_numbers(27);
+    vector<int> all_numbers(50);
     iota(all_numbers.begin(),all_numbers.end(),1);
     random_device rd;
     mt19937 gen(rd());
-
     shuffle(all_numbers.begin(),all_numbers.end(),gen);
-    vector<int> random_numbers1(all_numbers.begin(),all_numbers.begin()+1);
-    cout<<"一等奖:星巴克";
+    vector<int> random_numbers1(all_numbers.begin(),all_numbers.begin()+12);
+    cout<<"CONGRAS!!!"<<endl;
     for(int num:random_numbers1) cout<<num<<" ";
     cout<<endl;
-    vector<int> random_numbers2(all_numbers.begin()+1,all_numbers.begin()+5);
-    cout<<"二等奖:小积木";
-    for(int num:random_numbers2) cout<<num<<" ";
-    cout<<endl;
-    vector<int> random_numbers3(all_numbers.begin()+5,all_numbers.begin()+11);
-    cout<<"三等奖:蜜雪冰城";
-    for(int num:random_numbers3) cout<<num<<" ";
-    cout<<endl;
-    vector<int> random_numbers4(all_numbers.begin()+11,all_numbers.begin()+12);
-    cout<<"特等奖:圣诞特供";
-    for(int num:random_numbers4) cout<<num<<" ";
-    return 0;
+
 }
