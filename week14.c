@@ -99,34 +99,23 @@ printf("distance between 2 rows:%ld\n",(long)(&map[5]+5-&map[0]+0));
 int min(int *arr,int size){
 
 }*/
-#include<stdio.h>
-#include<string.h>
 int main(){
-    int n;
-    char str[100][85];
-    char *swh[100];
-    scanf("%d",&n);
+    int n,m;
+    printf("asdgfh");
+    scanf("%d %d",&n,&m);
+    printf("%d",n);
     getchar();
+    int a[n][m];
     for(int i=0;i<n;i++){
-        fgets(str[i],81,stdin);
-        int len=strlen(str[i]);
-        if(str[i][len-1]=='\n'){
-            str[i][len-1]='\0';
+        for(int j=0;j<m;j++){
+            scanf("%d",a[i][j]);
         }
-        swh[i]=str[i];
-    }
-    for(int i=0;i<n-1;i++){
-        for(int j=0;j<n-i-1;j++){
-            int result=strcmp(swh[j],swh[j+1]);
-            if(result>0){
-                char *temp=swh[j];
-                swh[j]=swh[j+1];
-                swh[j+1]=temp;
-            }
-        }
+        getchar();
     }
     for(int i=0;i<n;i++){
-        printf("%s\n",swh[i]);
+        for(int j=0;j<m;j++){
+            printf("%d ",a[i][j]);
+        }
+        printf("\n");
     }
-    return 0;
-}
+} 
