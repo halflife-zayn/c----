@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-/*struct Student{
+struct Student{
     string name;
     int ch,ma,en,tot;
     Student(string A,int B,int C,int D){
@@ -25,7 +25,7 @@ int main(){
         if(a[i]>ans) ans=a[i];
     }
     cout<<ans.name<<" "<<ans.ch<<" "<<ans.ma<<" "<<ans.en;
-}*/
+}
 /**
  * struct Point {
  *	int x;

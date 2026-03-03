@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-typedef struct Node{
+
+/*typedef struct Node{
     int value;
     struct Node* next;
 }Node;
@@ -80,7 +81,7 @@ int main(){
     }
     printnode(head);
     free(head);
-}
+}*/
 /*struct point
 {
     int x;
@@ -234,3 +235,20 @@ int main(){
     }
     else printf("%d %s %d %d",student2.id,student2.name,student2.grade,student2.class);
 }*/
+struct week16
+{
+    char c;
+    int age;
+    char a;
+}w1;
+struct week17
+{
+    
+    char c;
+    char a;
+    int age;
+}w2;
+int main(){
+    
+    printf("%d %d",sizeof(w1),sizeof(w2));
+}

@@ -1415,7 +1415,8 @@ int main(){
         printf("%d %s %d %d %.1lf\n",studentall[i].id,studentall[i].name,studentall[i].grade,studentall[i].class,studentall[i].score);
     }
 }*/
-struct student
+//结构体排列
+/*struct student
 {
     int id;
     char name[15];
@@ -1443,15 +1444,15 @@ int main(){
             }
             else if(studentall[i].score==studentall[j].score){
                 if(strcmp(studentall[j].name,studentall[i].name)<0){
-swap(&studentall[i],&studentall[j]);
+                swap(&studentall[i],&studentall[j]);
             }
             else if(strcmp(studentall[j].name,studentall[i].name)==0){
                 if(studentall[i].grade>studentall[j].grade){
-swap(&studentall[i],&studentall[j]);
+                swap(&studentall[i],&studentall[j]);
             }
             else if(studentall[i].grade==studentall[j].grade){
                 if(studentall[i].class>studentall[j].class){
-swap(&studentall[i],&studentall[j]);
+                swap(&studentall[i],&studentall[j]);
             }
             }
             }
@@ -1461,9 +1462,40 @@ swap(&studentall[i],&studentall[j]);
     for(int i=0;i<n;i++){
         printf("%d %s %d %d %.1lf\n",studentall[i].id,studentall[i].name,studentall[i].grade,studentall[i].class,studentall[i].score);
     }
-}
-
-
+}*/
+//二维坐标定位
+/*struct point
+{
+    int x;
+    int y;
+};
+int main(){
+    int n;
+    struct point point1[200];
+    int x1[202]={0};
+    int y1[202]={0};
+    scanf("%d",&n);
+    for(int i=0;i<n;i++){
+        scanf("%d %d",&point1[i].x,&point1[i].y);
+        x1[point1[i].x+100]++;
+        y1[point1[i].y+100]++;
+    }
+    int maxx=0;int x2;
+    int maxy=0;int y2;
+    for(int i=0;i<=200;i++){
+        if(maxx<x1[i]||(maxx==x1[i]&&(i-100)<x2)){maxx=x1[i];x2=i-100;}
+        if(maxy<y1[i]||(maxy==y1[i]&&(i-100)<y2)){maxy=y1[i];y2=i-100;}
+    }
+    double avex=0,avey=0;
+    int cntx=0,cnty=0;
+    for(int i=0;i<n;i++){
+        if(point1[i].x==x2){avey+=point1[i].y;cntx++;}
+        if(point1[i].y==y2){avex+=point1[i].x;cnty++;}
+    }
+    avex/=cnty;
+    avey/=cntx;
+    printf("%.2lf\n%.2lf",avey,avex);
+}*/
 
 
 

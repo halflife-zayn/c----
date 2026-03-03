@@ -161,8 +161,8 @@ string str;
 int n;
 cin>>n;
 for(int i=1;i<=500;i++){
-    str+=std::to_string(i);//直接加到后面而不是加int类型
-}
+    str+=to_string(i);//直接加到后面而不是加int类型
+    }
 cout<<str[n-1];
 }
 #include <iostream>

@@ -84,16 +84,11 @@ int main(){
     /*int timeRequiredToBuy(vector<int>& tickets, int k) {
     int time = 0;
     int n = tickets.size();
-    
     for (int i = 0; i < n; i++) {
-        if (i <= k) {
-            // k及之前的元素：能买到min(tickets[i], tickets[k])张
+        if (i <= k) {// k及之前的元素：能买到min(tickets[i], tickets[k])张
             time += min(tickets[i], tickets[k]);
-        } else {
-            // k之后的元素：能买到min(tickets[i], tickets[k]-1)张
-            time += min(tickets[i], tickets[k] - 1);
-        }
-    }
+        } else {// k之后的元素：能买到min(tickets[i], tickets[k]-1)张
+            time += min(tickets[i], tickets[k] - 1);} }
     
     return time;
 }*/
@@ -233,3 +228,8 @@ int main(){
     }
     cout<<count;
 }*/
+int main (){
+    int a=10;
+    int b=a+=a-=2*3;
+    printf("%d",b);
+}

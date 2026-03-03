@@ -18,16 +18,13 @@ using namespace std;
 
 int main() {
     int a,b,c;
-    while(cin>>a>>b){
-        
+    while(cin>>a>>b){ 
         if(a==0&&b==0){
             break;
         }
         c=a+b;
         cout<<c<<"\n";
-        
     }
-    
     return 0;
 }
 /*求素数*/
@@ -148,7 +145,6 @@ int main() {
         sum2=sum1;
         sum1=sum3;
     }
-    
     cout<<sum3;
     return 0;
 }

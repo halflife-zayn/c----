@@ -1,1 +1,1 @@
-{"name":"Local: week16","url":"d:\\c++代码\\week16.c","tests":[{"id":1767146296188,"input":"3\n10 20 30\n2\nI 1 99\nD 2","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\c++代码\\week16.c","group":"local","local":true}
+{"name":"Local: week16","url":"d:\\c++代码\\week16.c","tests":[{"id":1767146296188,"input":"","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\c++代码\\week16.c","group":"local","local":true}
