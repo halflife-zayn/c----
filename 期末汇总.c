@@ -1499,3 +1499,24 @@ int main(){
 
 
 
+int main(){
+    int n;
+    int t;
+    scanf("%d",&t);
+    for(int j=0;j<t;j++){
+    printf("case #%d:\n",j);    
+    scanf("%d",&n);
+    int a[32]={0};
+    int count=0;
+    int r=n;
+    for(int i=0;n>0;i++){
+        a[i]=n%2;
+        n/=2;
+        count=i;
+    }
+    for(count;count>=0;count--){
+        printf("%d",a[count]);
+    }
+    printf(" %X\n",r);
+    }
+}

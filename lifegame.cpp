@@ -1,19 +1,8 @@
 
-/*#include<bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 char cell[20][60];
 int main(){
-    cout<<"Life is really a simulation, not a game with players."
-    <<"\nIt takes place on unbounded rectangular grid in which each cell can either be occupied by an organism or not. Occupied cells are called alived; unoccupied cells are called dead."
-    <<"\nWhich cells are alive changes from generation to generation according to the number of neighboring cells that are alive, as follows transition rules:"
-<<"\n(1) The neighbors of a given cell are the eight cells that touch it vertically, horizontally, or diagonally."
-<<"\n(2) If a cell is alive but either has no neighboring cells alive or only one alive, then in the next generation the cell dies of loneliness."
-<<"\n(3) If a cell is alive and has four or more neighboring cells also alive, then in the next generation the cell dies of overcrowding."
-<<"\n(4) A living cell with either two or three living neighbors remains alive in the next generation."
-<<"\n(5) If a cell is dead, then in the next generation it will become alive if it has exactly three neighboring cells, no more or fewer, that are already alive. All other dead cells remain dead in the next generation."
-<<"\n(6) All births and deaths take place at exactly the same time."
-<<"\n(7) The size of grid is 20*60"<<endl
-<<"Now input the coordinates of living cells,input -1 -1 to stop"<<endl;
 for(int i=0;i<20;i++){
     for(int j=0;j<60;j++){
 cell[i][j]='-';
@@ -25,7 +14,6 @@ while(cin>>i>>j){
     i--;j--;
     cell[i][j]='*';
 }
-cout<<"Now press 0 and then enter to see the cells' life"<<endl;
 int t;
 while(cin>>t){
 if(t!=0)break;
@@ -109,7 +97,7 @@ for(int i=0;i<20;i++){
 }
 }
 
-}*/
+}
 /*#include<bits/stdc++.h>
 using namespace std;
 int main(){
@@ -149,7 +137,7 @@ int main(){
     }
     return 0;
 }*/
-#include<bits/stdc++.h>
+/*#include<bits/stdc++.h>
 using namespace std;
 char cell[60];
 int main(){
@@ -214,4 +202,4 @@ int cellnum[60]={0};
     cout<<endl;
 
 }
-}
+}*/

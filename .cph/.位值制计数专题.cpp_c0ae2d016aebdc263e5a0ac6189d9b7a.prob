@@ -1,0 +1,1 @@
+{"name":"Local: 位值制计数专题","url":"d:\\c++代码\\位值制计数专题.cpp","tests":[{"id":1773583041293,"input":"3\n3762 05C3\nCB9 957\nF 1\n","output":"case #0:\n3D25\ncase #1:\n1610\ncase #2:\n10\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\c++代码\\位值制计数专题.cpp","group":"local","local":true}

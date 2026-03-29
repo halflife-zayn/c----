@@ -1,0 +1,1 @@
+{"name":"Local: 字符串专题","url":"d:\\c++代码\\字符串专题.cpp","tests":[{"id":1773620060333,"input":"1\nAb\nAB\nABabAB","output":"case #0:\n14\ncase #1:\n1\ncase #2:\n13\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\c++代码\\字符串专题.cpp","group":"local","local":true}
