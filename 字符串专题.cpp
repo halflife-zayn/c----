@@ -1,7 +1,212 @@
 #include<bits/stdc++.h>
 using namespace std;
-//最大间距
+//科学计数法
+string kexuejishu(string num,int precise){
+    int size=num.size();
+    int validpos=0;
+    int maxpos=-1;
+    int dotpos=0;
+    for(int i=0;i<size;i++){
+        if(num[i]=='.'){dotpos=i;break;}
+        maxpos++;
+    }
+    if(num[0]=='0'){
+        for(int i=2;i<size;i++){
+            if(num[i]!='0'){
+                validpos=i;
+                maxpos=1-i;
+                break;
+            }
+        }
+    }
+    string res="";
+    res+=num[validpos];res+=".";
+    bool hasdot=false;
+    for(int i=1;i<precise;i++){
+        if(i+validpos>size-1){res+="0";continue;}
+        if(i+validpos==dotpos){precise++;hasdot=true;continue;}
+        res+=num[validpos+i];
+    }
+    if(hasdot)precise--;
+    //四舍五入
+    int checkpos=validpos+precise;
+    if(checkpos==dotpos) checkpos++;
+    if(checkpos<size&&num[checkpos]-'0'>=5){
+        int car=1;
+        for(int i=precise-1;i>=1&&car;i--){
+            int idx=i+1;
+            if(res[idx]=='9'){
+                res[idx]='0';
+                car=1;
+            }else{
+                res[idx]++;
+                car=0;
+            }
+        }
+        if(car){
+            if(res[0]=='9'){
+                res[0]='1';
+                res[1]='0';
+                maxpos++;
+            }else{
+                res[0]++;
+            }
+        }
+    }
+    res=res.substr(0,precise+2);
+    if(maxpos!=0){
+        res+="F";
+        if(maxpos>0) res+="+";
+        res+=to_string(maxpos);
+    }
+    return res;
+}
 int main(){
+    int t;
+    cin>>t;
+    cin.ignore();
+    for(int cas=0;cas<t;cas++){
+        cout<<"case #"<<cas<<":\n";
+        string num="";
+        int precise;
+        string line;
+        cin>>num>>precise;
+        cout<<kexuejishu(num,precise)<<endl;
+    }
+}
+//小数加法四舍五入
+/*string zhengA,zhengB;
+string xiaoA,xiaoB;
+string zhengRes,xiaoRes;
+
+string addZheng(string a,string b,int& hascarry){
+    int carry=0;
+    reverse(a.begin(),a.end());
+    reverse(b.begin(),b.end());
+    string res;
+    int i=0;
+    while(i<a.size()||i<b.size()||carry){
+        int sum=carry;
+        if(i<a.size()) sum+=a[i]-'0';
+        if(i<b.size()) sum+=b[i]-'0';
+        res.push_back(sum%10+'0');
+        carry=sum/10;
+        i++;
+    }
+    hascarry=carry;
+    reverse(res.begin(),res.end());
+    if(res.empty()) res="0";
+    return res;
+}
+
+string addXiao(string a,string b,int& hascarry){
+    int carry=0;
+    int sizea=a.size();
+    int sizeb=b.size();
+    int size=max(sizea,sizeb);
+    if(sizea<size){
+        for(int i=0;i<size-sizea;i++) a+='0';
+    }
+    if(sizeb<size){
+        for(int i=0;i<size-sizeb;i++) b+='0';
+    }
+    string res;
+    for(int i=size-1;i>=0;i--){
+        int sum=(a[i]-'0')+(b[i]-'0')+carry;
+        res.push_back(sum%10+'0');
+        carry=sum/10;
+    }
+    hascarry=carry;
+    reverse(res.begin(),res.end());
+    return res;
+}
+
+void separate(string s,string& zheng,string& xiao){
+    int size=s.size();
+    int dotpos=size;
+    for(int i=0;i<size;i++){
+        if(s[i]=='.'){dotpos=i;break;}
+    }
+    for(int i=0;i<dotpos;i++){
+        zheng.push_back(s[i]);
+    }
+    if(zheng.empty()) zheng="0";
+    for(int i=dotpos+1;i<size;i++){
+        xiao.push_back(s[i]);
+    }
+}
+
+int main(){
+    int precise,hascarry=0;
+    string a,b;
+    cin>>a>>b>>precise;
+    separate(a,zhengA,xiaoA);
+    separate(b,zhengB,xiaoB);
+    xiaoRes=addXiao(xiaoA,xiaoB,hascarry);
+    int carryToInt=hascarry;
+    zhengRes=addZheng(zhengA,zhengB,hascarry);
+    if(carryToInt){
+        int i=zhengRes.size()-1;
+        int car=1;
+        while(i>=0&&car){
+            zhengRes[i]+=car;
+            if(zhengRes[i]=='9'+1){
+                zhengRes[i]='0';
+                car=1;
+                i--;
+            }else{
+                car=0;
+            }
+        }
+        if(car){
+            zhengRes.insert(zhengRes.begin(),'1');
+        }
+    }
+    if(xiaoRes.size()>precise){
+        if(xiaoRes[precise]>='5'){
+            int car=1;
+            for(int i=precise-1;i>=0&&car;i--){
+                xiaoRes[i]+=car;
+                if(xiaoRes[i]=='9'+1){
+                    xiaoRes[i]='0';
+                    car=1;
+                }else{
+                    car=0;
+                }
+            }
+            if(car){
+                int i=zhengRes.size()-1;
+                int car2=1;
+                while(i>=0&&car2){
+                    zhengRes[i]+=car2;
+                    if(zhengRes[i]=='9'+1){
+                        zhengRes[i]='0';
+                        car2=1;
+                        i--;
+                    }else{
+                        car2=0;
+                    }
+                }
+                if(car2){
+                    zhengRes.insert(zhengRes.begin(),'1');
+                }
+            }
+        }
+        xiaoRes=xiaoRes.substr(0,precise);
+    }else{
+        while(xiaoRes.size()<precise) xiaoRes+='0';
+    }
+    size_t pos=zhengRes.find_first_not_of('0');
+    if(pos==string::npos){
+        zhengRes="0";
+    }else{
+        zhengRes=zhengRes.substr(pos);
+    }
+    cout<<zhengRes<<"."<<xiaoRes<<endl;
+    return 0;
+}*/
+//最大间距
+/*int main(){
     int t;  
     cin>>t;
     for(int cas=0;cas<t;cas++){
@@ -42,7 +247,7 @@ int main(){
         int cha=max(cha1,cha2);
         cout<<cha<<endl;
     }
-}
+}*/
 //句中单词表
 /*int main(){
 set<string> s;

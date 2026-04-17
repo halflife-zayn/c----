@@ -1,0 +1,1 @@
+{"name":"Local: 列表专题","url":"d:\\c++代码\\列表专题.cpp","tests":[{"id":1776316926341,"input":"3 7 8 4 6 -1\n1 2 -1 -1\n3 -1\n4 9 -1 -1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\c++代码\\列表专题.cpp","group":"local","local":true}
